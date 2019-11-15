@@ -1,0 +1,33 @@
+.test-animation-page {
+
+}
+
+.test-animation-page .intro-text {
+  margin-bottom: 20px;
+}
+
+.test-animation-page .btn {
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  padding: 4px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 20px 0;
+}
+
+.test-animation-page h3 {
+  font-weight: 300;
+  font-size: 5vw;
+  height: 6vw;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  line-height: 1;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.test-animation-page .hidetext {
+  position: absolute;
+  z-index: 200;
+}
