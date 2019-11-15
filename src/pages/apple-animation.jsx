@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import './apple-animation.css';
 import gsap, { Power4 } from "gsap";
+import ScrollMagic from 'scrollmagic';
 
 class AppleAnimationPage extends Component {
 
   componentDidMount() {
-    this.animateIn = gsap.timeline({paused: true});
+    this.animateIn = gsap.timeline({ paused: true });
 
     this.animateIn
       .fromTo('.overlay', 2, { skewX: 30, scale: 1.5 }, { skewX: 0, xPercent: 100, transformOrigin: "0% 100%", ease: Power4.easeOut })
       .from('.project-info', 0.8, { scaleY: 0, transformOrigin: '100% 100%' }, '-=1.5')
       .from('.small-title', 0.5, { autoAlpha: 0, y: 30, ease: Power4.easeOut }, '-=1')
       .from('.project-link', 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut }, '-=0.5')
-      .from('h4', 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut }, '-=0.5')
+      .from('h4', 0.3, { autoAlpha: 0, y: 30, ease: Power4.easeOut }, '-=0.5');
 
   }
 
