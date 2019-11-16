@@ -1,0 +1,17 @@
+.cardpay-gsap-page h3 {
+  font-weight: 300;
+  font-size: 5vw;
+  height: 6vw;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  line-height: 1;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardpay-gsap-page .hidetext {
+  position: absolute;
+  z-index: 200;
+  /* top: 200px; */
+}

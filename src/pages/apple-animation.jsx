@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './apple-animation.css';
 import gsap, { Power4 } from "gsap";
-import ScrollMagic from 'scrollmagic';
 
 class AppleAnimationPage extends Component {
 
@@ -48,7 +47,7 @@ class AppleAnimationPage extends Component {
             <div className="project-info">
               <p className="small-title">Identity // Website // Print</p>
               <h4>This is the first project</h4>
-              <a className="project-link" href="">See out case study</a>
+              <a className="project-link" href="/">See out case study</a>
             </div>
           </div>
         </section>
@@ -62,7 +61,7 @@ class AppleAnimationPage extends Component {
             <div className="project-info">
               <p className="small-title">Identity // Website // Print</p>
               <h4>This is the second project</h4>
-              <a className="project-link" href="">See out case study</a>
+              <a className="project-link" href="/">See out case study</a>
             </div>
           </div>
         </section>
