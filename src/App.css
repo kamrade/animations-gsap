@@ -1,11 +1,11 @@
-.App {
-  padding: 20px;
-}
-
 .App .nav {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 20px;
+  position: absolute;
+  top: 0;
+  padding: 20px 10px;
+  width: 100%;
 }
 
 .App .nav .nav-item {
@@ -14,4 +14,8 @@
   text-transform: uppercase;
   letter-spacing: 0.75px;
   font-weight: 500;
+}
+
+.App .router-outlet {
+  padding: 80px 20px 20px;
 }
