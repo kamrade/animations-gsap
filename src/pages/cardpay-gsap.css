@@ -10,14 +10,25 @@
   position: relative;
 }
 
-.cardpay-gsap-page .hidetext, .cardpay-gsap-page .hidetext-1, .cardpay-gsap-page .hidetext-2 {
+.cardpay-gsap-page .hidetext,
+.cardpay-gsap-page .hidetext-1,
+.cardpay-gsap-page .hidetext-2,
+.cardpay-gsap-page .hidetext-3 {
   position: absolute;
   z-index: 200;
-  /* top: 200px; */
+}
+
+.cardpay-gsap-page .original-scene-title {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: relative;
 }
 
 .cardpay-gsap-page .section {
   height: 100vh;
+  position: relative;
+  display: flex;
 }
 
 .cardpay-gsap-page .section.section-separator {
