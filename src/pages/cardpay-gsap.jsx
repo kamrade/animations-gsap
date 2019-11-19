@@ -32,53 +32,27 @@ class CardpayGsapPage extends Component {
       slideHeight
     }, () => {
 
-      let self = this;
-
       this.tl1 = gsap.timeline({paused: true});
       this.tl1
-        .staggerFrom('.hidetext-1', 0.4, {
+        .staggerFrom('.hidetext-1', 0.5, {
           y: "200%",
-          ease: Power4.easeOut
+          ease: Power4.easeIn
         }, 0.15);
-
-      this.tl1_reverse = gsap.timeline({paused: true});
-      this.tl1_reverse
-        .staggerTo('.hidetext-1', 0.4, {
-          y: "200%",
-          ease: Power4.easeOut
-        }, 0.15, null, () => {
-          gsap.to('.hidetext-1', 0.4, {
-            opacity: 0
-          }, 0.2);
-        });
 
       this.tl2 = gsap.timeline({paused: true});
       this.tl2
-        .staggerFrom('.hidetext-2', 0.4, {
+        .staggerFrom('.hidetext-2', 0.5, {
           y: "200%",
-          ease: Power4.easeOut
-        }, 0.15);
-
-      this.tl2_reverse = gsap.timeline({paused: true});
-      this.tl2_reverse
-        .staggerTo('.hidetext-2', 0.4, {
-          y: "200%",
-          ease: Power4.easeOut
+          ease: Power4.easeIn
         }, 0.15);
 
       this.tl3 = gsap.timeline({paused: true});
       this.tl3
-        .staggerFrom('.hidetext-3', 0.4, {
+        .staggerFrom('.hidetext-3', 0.5, {
           y: "200%",
-          ease: Power4.easeOut
+          ease: Power4.easeIn
         }, 0.15);
 
-      this.tl3_reverse = gsap.timeline({paused: true});
-      this.tl3_reverse
-        .staggerTo('.hidetext-3', 0.4, {
-          y: "200%",
-          ease: Power4.easeOut
-        }, 0.15);
     });
 
   }
@@ -100,11 +74,11 @@ class CardpayGsapPage extends Component {
   animateOut(n, progress) {
 
     let currentSlideState = `stateIn${n}`;
-    let currentAnimationOut  = `tl${n}_reverse`;
+    let currentAnimation  = `tl${n}`;
 
     if (this[currentSlideState]) {
       this[currentSlideState] = false;
-      this[currentAnimationOut].play();
+      this[currentAnimation].reverse();
     }
   }
 
