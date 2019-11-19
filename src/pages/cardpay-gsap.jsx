@@ -32,6 +32,8 @@ class CardpayGsapPage extends Component {
       slideHeight
     }, () => {
 
+      let self = this;
+
       this.tl1 = gsap.timeline({paused: true});
       this.tl1
         .staggerFrom('.hidetext-1', 0.4, {
@@ -39,9 +41,27 @@ class CardpayGsapPage extends Component {
           ease: Power4.easeOut
         }, 0.15);
 
+      this.tl1_reverse = gsap.timeline({paused: true});
+      this.tl1_reverse
+        .staggerTo('.hidetext-1', 0.4, {
+          y: "200%",
+          ease: Power4.easeOut
+        }, 0.15, null, () => {
+          gsap.to('.hidetext-1', 0.4, {
+            opacity: 0
+          }, 0.2);
+        });
+
       this.tl2 = gsap.timeline({paused: true});
       this.tl2
         .staggerFrom('.hidetext-2', 0.4, {
+          y: "200%",
+          ease: Power4.easeOut
+        }, 0.15);
+
+      this.tl2_reverse = gsap.timeline({paused: true});
+      this.tl2_reverse
+        .staggerTo('.hidetext-2', 0.4, {
           y: "200%",
           ease: Power4.easeOut
         }, 0.15);
@@ -52,45 +72,18 @@ class CardpayGsapPage extends Component {
           y: "200%",
           ease: Power4.easeOut
         }, 0.15);
+
+      this.tl3_reverse = gsap.timeline({paused: true});
+      this.tl3_reverse
+        .staggerTo('.hidetext-3', 0.4, {
+          y: "200%",
+          ease: Power4.easeOut
+        }, 0.15);
     });
 
   }
 
   animateIn(n, progress) {
-
-    let k = -1;
-    let j = 0.5;
-
-    if (progress <= 0.5) {
-      j = 0.5 - progress;
-    } else {
-      j = progress - 0.5;
-    }
-
-    if (progress > 0.5) {
-      k = 1;
-    }
-
-    switch(n) {
-      case 1:
-        gsap.to('.original-scene-title-1', 0.4, {
-          y: k * j * 600
-        });
-        break;
-      case 2:
-        gsap.to('.original-scene-title-2', 0.4, {
-          y: k * j * 600
-        });
-        break;
-      case 3:
-        gsap.to('.original-scene-title-3', 0.4, {
-          y: k * j * 600
-        });
-        break;
-      default:
-        return;
-    }
-
 
     let currentSlideState = `stateIn${n}`;
     let currentAnimation  = `tl${n}`;
@@ -98,6 +91,7 @@ class CardpayGsapPage extends Component {
 
     if (!this[currentSlideState]) {
       this[currentSlideState] = true;
+      this[currentAnimation].timeScale(1);
       this[currentAnimation].play();
     }
 
@@ -105,27 +99,21 @@ class CardpayGsapPage extends Component {
 
   animateOut(n, progress) {
 
-    console.log('animate out', n, progress);
-
     let currentSlideState = `stateIn${n}`;
-    let currentAnimation  = `tl${n}`;
+    let currentAnimationOut  = `tl${n}_reverse`;
+
     if (this[currentSlideState]) {
       this[currentSlideState] = false;
-      this[currentAnimation].reverse();
+      this[currentAnimationOut].play();
     }
   }
 
   render() {
     return (
       <div className='page cardpay-gsap-page'>
+
         <div id="trigger-1" />
-        <div ref={this.section} className="section">
-          <div className="original-scene-title original-scene-title-1">
-            <h3><span className="hidetext-1">10 years</span></h3>
-            <h3><span className="hidetext-1">of experience</span></h3>
-            <h3><span className="hidetext-1">in fintech</span></h3>
-          </div>
-        </div>
+        <div ref={this.section} className="section" />
 
         <Controller>
           <Scene triggerElement="#trigger-1" indicators={true} duration={this.state.slideHeight}>
@@ -138,12 +126,7 @@ class CardpayGsapPage extends Component {
         </Controller>
 
         <div id="trigger-2" />
-        <div className="section">
-          <div className="original-scene-title original-scene-title-2">
-            <h3><span className="hidetext-2">Fast onboarding</span></h3>
-            <h3><span className="hidetext-2">in 1 day</span></h3>
-          </div>
-        </div>
+        <div className="section" />
 
         <Controller>
           <Scene triggerElement="#trigger-2" indicators={true} duration={this.state.slideHeight}>
@@ -156,13 +139,8 @@ class CardpayGsapPage extends Component {
         </Controller>
 
         <div id="trigger-3" />
-        <div className="section" >
-          <div className="original-scene-title original-scene-title-3">
-            <h3><span className="hidetext-3">Spare yourself</span></h3>
-            <h3><span className="hidetext-3">the usual marketing</span></h3>
-            <h3><span className="hidetext-3">blah blah blah…</span></h3>
-          </div>
-        </div>
+        <div className="section" />
+
         <Controller>
           <Scene triggerElement="#trigger-3" indicators={true} duration={this.state.slideHeight}>
             { progress => {
@@ -173,6 +151,26 @@ class CardpayGsapPage extends Component {
           </Scene>
         </Controller>
 
+        <div className="fixed-slides">
+
+          <div className="original-scene-title original-scene-title-1">
+            <h3><span className="hidetext-1">10 years</span></h3>
+            <h3><span className="hidetext-1">of experience</span></h3>
+            <h3><span className="hidetext-1">in fintech</span></h3>
+          </div>
+
+          <div className="original-scene-title original-scene-title-2">
+            <h3><span className="hidetext-2">Fast onboarding</span></h3>
+            <h3><span className="hidetext-2">in 1 day</span></h3>
+          </div>
+
+          <div className="original-scene-title original-scene-title-3">
+            <h3><span className="hidetext-3">Spare yourself</span></h3>
+            <h3><span className="hidetext-3">the usual marketing</span></h3>
+            <h3><span className="hidetext-3">blah blah blah…</span></h3>
+          </div>
+
+        </div>
 
       </div>
     );

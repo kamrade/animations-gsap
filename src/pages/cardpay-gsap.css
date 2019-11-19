@@ -1,3 +1,7 @@
+.cardpay-gsap-page {
+  position: relative;
+}
+
 .cardpay-gsap-page h3 {
   font-weight: 300;
   font-size: 5vw;
@@ -18,19 +22,28 @@
   z-index: 200;
 }
 
-.cardpay-gsap-page .original-scene-title {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  position: relative;
-}
-
 .cardpay-gsap-page .section {
   height: 100vh;
-  position: relative;
-  display: flex;
 }
 
 .cardpay-gsap-page .section.section-separator {
   height: 100px;
+}
+
+.cardpay-gsap-page .fixed-slides {
+  position: relative;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  background-color: #f1f3f7;
+}
+
+.cardpay-gsap-page .fixed-slides .original-scene-title {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
