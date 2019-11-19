@@ -28,9 +28,6 @@ class CardpayGsapPage extends Component {
 
     const slideHeight = this.section.current.offsetHeight;
 
-    // let slideHeight = window.innerHeight - 80;
-    // console.log(slideHeight);
-
     this.setState({
       slideHeight
     }, () => {
@@ -76,29 +73,34 @@ class CardpayGsapPage extends Component {
 
     switch(n) {
       case 1:
-        gsap.to('.original-scene-title-1', {
+        gsap.to('.original-scene-title-1', 0.4, {
           y: k * j * 600
         });
         break;
       case 2:
-        gsap.to('.original-scene-title-2', {
+        gsap.to('.original-scene-title-2', 0.4, {
+          y: k * j * 600
+        });
+        break;
+      case 3:
+        gsap.to('.original-scene-title-3', 0.4, {
           y: k * j * 600
         });
         break;
       default:
+        return;
     }
-
-
-
 
 
     let currentSlideState = `stateIn${n}`;
     let currentAnimation  = `tl${n}`;
 
+
     if (!this[currentSlideState]) {
       this[currentSlideState] = true;
       this[currentAnimation].play();
     }
+
   }
 
   animateOut(n, progress) {
