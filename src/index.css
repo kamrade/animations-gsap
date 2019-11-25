@@ -4,8 +4,10 @@
   --duo-spacer: 2rem;
   --quarto-spacer: 4rem;
 
+  --z-index-inner-nav: 9999;
   --z-index-nav: 99999;
   --z-index-menu-toggler: 999999;
+
   --gray-100: #f2f5f9;
   --gray-200: #e2e5e9;
   --gray-900: #131719;

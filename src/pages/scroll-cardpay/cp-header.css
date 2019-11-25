@@ -3,10 +3,12 @@
   justify-content: space-between;
   margin-bottom: 50vh;
   position: fixed;
+  z-index: var(--z-index-inner-nav);
   top: 0px;
   left: 0;
   right: 0;
   padding: 40px;
+  background-color: #fff;
 }
 
 .cp-header .logo-wrapper {

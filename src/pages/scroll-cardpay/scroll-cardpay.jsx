@@ -20,14 +20,19 @@ class ScrollCardpayPage extends Component {
         <CpHeader />
 
         <Controller>
-          <Scene duration={300} pin={true} enabled={true}>
-            <div className="sticky"><div>Pin Test</div></div>
+          <Scene duration={600} pin={true} enabled={true}>
+            { (progress) => {
+              console.log(progress);
+              return (
+                <div className="sticky"><div>Pin Test 100</div></div>
+              )
+            }}
           </Scene>
-          <Scene duration={200} pin={{ pushFollowers: false }}>
-            <div className="sticky"><div>Pin Test</div></div>
+          <Scene duration={600} pin={{ pushFollowers: false }}>
+            <div className="sticky"><div>Pin Test 200</div></div>
           </Scene>
-          <Scene duration={300} pin={true} offset={100}>
-            <div className="sticky blue"><div>Pin Test</div></div>
+          <Scene duration={600} pin={true} offset={100}>
+            <div className="sticky blue"><div>Pin Test 300</div></div>
           </Scene>
         </Controller>
 
