@@ -1,0 +1,40 @@
+.cp-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50vh;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  padding: 40px;
+}
+
+.cp-header .logo-wrapper {
+  width: 160px;
+  height: 32px;
+}
+
+.cp-header .menu-wrapper {
+  display: flex;
+}
+
+/* 27px */
+
+.cp-header .menu-wrapper .menu-item {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  padding: 4px 16px;
+  margin: auto;
+  transition: background .2s ease-in-out;
+  border-radius: 2px;
+}
+
+.cp-header .menu-wrapper .menu-item.menu-item-login {
+  color: var(--brand);
+}
+
+.cp-header .menu-wrapper .menu-item:hover {
+  cursor: pointer;
+  background-color: var(--gray-100);
+}

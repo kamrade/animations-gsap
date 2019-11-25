@@ -17,6 +17,8 @@ class CardpayGsapPage extends Component {
     this.state = {
       stateIn1: false,
       stateIn2: false,
+      stateIn3: false,
+      stateIn4: false,
       slideHeight: 0,
       firstSlideHeight: 0,
       progress: 0
@@ -76,8 +78,9 @@ class CardpayGsapPage extends Component {
     let currentAnimation  = `tl${n}`;
 
 
-    if (!this[currentSlideState]) {
-      this[currentSlideState] = true;
+    if (!this.state[currentSlideState]) {
+      this.setState({ [currentSlideState]: true });
+      // this[currentSlideState] = true;
       this[currentAnimation].timeScale(1);
       this[currentAnimation].play();
     }
@@ -89,8 +92,9 @@ class CardpayGsapPage extends Component {
     let currentSlideState = `stateIn${n}`;
     let currentAnimation  = `tl${n}`;
 
-    if (this[currentSlideState]) {
-      this[currentSlideState] = false;
+    if (this.state[currentSlideState]) {
+      this.setState({ [currentSlideState]: false });
+      // this[currentSlideState] = false;
       this[currentAnimation].reverse();
     }
   }

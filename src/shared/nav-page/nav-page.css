@@ -1,0 +1,31 @@
+.nav-page {
+  position: fixed;
+  z-index: var(--z-index-nav);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gray-100);
+  padding: var(--quarto-spacer);
+}
+
+.nav-page .nav-item {
+  margin-bottom: var(--spacer-sm);
+}
+
+.nav-page .nav-item .navigation-link {
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.nav-page .nav-item .navigation-link:hover {
+  text-decoration: underline;
+}
+
+.nav-page .nav-item .navigation-link.active-link {
+  color: var(--primary);
+}
+
+.nav-page .nav-item a, .nav-page .nav-item a:visited {
+  color: #333;
+}
