@@ -8,6 +8,7 @@ import TestAnimationPage from './pages/test-animation/test-animation';
 import ReactGsapPage from './pages/react-gsap/react-gsap';
 import CardpayGsapPage from './pages/cardpay/cardpay-gsap';
 import ScrollCardpayPage from './pages/scroll-cardpay/scroll-cardpay';
+import ScrollScalePage from './pages/scroll-scale/scroll-scale';
 
 import NavPage from './shared/nav-page/nav-page';
 
@@ -27,6 +28,9 @@ const navMenu = [{
 }, {
   path: '/e',
   title: 'Scroll Cardpay'
+}, {
+  path: '/f',
+  title: 'Scroll scale'
 }];
 
 
@@ -61,6 +65,7 @@ class App extends Component {
             <Route path="/c" component={ () => (<ReactGsapPage />)} />
             <Route path="/d" component={ () => (<CardpayGsapPage />)} />
             <Route path="/e" component={ () => (<ScrollCardpayPage />)} />
+            <Route path="/f" component={ () => (<ScrollScalePage />)} />
           </Switch>
         </div>
 
