@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router'
 import './App.css';
 
-import AppleAnimationPage from './pages/apple-animation';
-import TestAnimationPage from './pages/test-animation';
-import ReactGsapPage from './pages/react-gsap';
+import AppleAnimationPage from './pages/apple-animation/apple-animation';
+import TestAnimationPage from './pages/test-animation/test-animation';
+import ReactGsapPage from './pages/react-gsap/react-gsap';
 import CardpayGsapPage from './pages/cardpay/cardpay-gsap';
 import ScrollCardpayPage from './pages/scroll-cardpay/scroll-cardpay';
 
