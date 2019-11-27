@@ -1,0 +1,6 @@
+.mask {
+  /* background-color: #ff00ff; */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
