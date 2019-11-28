@@ -58,20 +58,23 @@ class ScrollScalePage extends Component {
 
         <Controller>
           <Scene
-            duration={this.state.windowHeight}
+            duration={this.state.windowHeight*3}
             pin={true}
             reverse={true}
             offset={this.state.windowHeight/2}
             indicators={true}
           >
             {
-              (progress, e, i) => {
+              (progress, e) => {
 
                 return (
                   <div style={{ height: this.state.windowHeight }} className="background-image">
                     <Tween
                       duration={0.25}
-                      to={{ scale: 1+progress*2, opacity: 1 - progress }}
+                      to={{
+                        scale: 1 + progress * 4,
+                        opacity: 0.75 - progress > 0 ? 0.75 - progress : 0
+                      }}
                     >
                       <div className="overlay-text">
                         <Mask />
